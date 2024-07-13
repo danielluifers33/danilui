@@ -1,164 +1,9 @@
 /**
  * UI JS
  */
-const destinations = [
-    {
-        city: "Arauca",
-        country: "Colombia",
-        code: "AUC"
-    },
-    {
-        city: "Armenia",
-        country: "Colombia",
-        code: "AXM"
-    },
-    {
-        city: "Barrancabermeja",
-        country: "Colombia",
-        code: "EJA"
-    },
-    {
-        city: "Barranquilla",
-        country: "Colombia",
-        code: "BAQ"
-    },
-    {
-        city: "Bogotá",
-        country: "Colombia",
-        code: "BOG"
-    },
-    {
-        city: "Bucaramanga",
-        country: "Colombia",
-        code: "BGA"
-    },
-    {
-        city: "Cali",
-        country: "Colombia",
-        code: "CLO"
-    },
-    {
-        city: "Cartagena",
-        country: "Colombia",
-        code: "CTG"
-    },
-    {
-        city: "Cúcuta",
-        country: "Colombia",
-        code: "CUC"
-    },
-    {
-        city: "Florencia",
-        country: "Colombia",
-        code: "FLA"
-    },
-    {
-        city: "Guapi",
-        country: "Colombia",
-        code: "GPI"
-    },
-    {
-        city: "Ibagué",
-        country: "Colombia",
-        code: "IBE"
-    },
-    {
-        city: "Ipiales",
-        country: "Colombia",
-        code: "IPI"
-    },
-    {
-        city: "Leticia",
-        country: "Colombia",
-        code: "LET"
-    },
-    {
-        city: "Manizales",
-        country: "Colombia",
-        code: "MZL"
-    },
-    {
-        city: "Medellín",
-        country: "Colombia",
-        code: "MDE"
-    },
-    {
-        city: "Montería",
-        country: "Colombia",
-        code: "MTR"
-    },
-    {
-        city: "Neiva",
-        country: "Colombia",
-        code: "NVA"
-    },
-    {
-        city: "Pasto",
-        country: "Colombia",
-        code: "PSO"
-    },
-    {
-        city: "Pereira",
-        country: "Colombia",
-        code: "PEI"
-    },
-    {
-        city: "Popayán",
-        country: "Colombia",
-        code: "PPN"
-    },
-    {
-        city: "Puerto Asís",
-        country: "Colombia",
-        code: "PUU"
-    },
-    {
-        city: "Riohacha",
-        country: "Colombia",
-        code: "RCH"
-    },
-    {
-        city: "San Andrés",
-        country: "Colombia",
-        code: "ADZ"
-    },
-    {
-        city: "San José del Guaviare",
-        country: "Colombia",
-        code: "SJE"
-    },
-    {
-        city: "Santa Marta",
-        country: "Colombia",
-        code: "SMR"
-    },
-    {
-        city: "Tumaco",
-        country: "Colombia",
-        code: "TCO"
-    },
-    {
-        city: "Valledupar",
-        country: "Colombia",
-        code: "VUP"
-    },
-    {
-        city: "Villavicencio",
-        country: "Colombia",
-        code: "VVC"
-    },
-    {
-        city: "Yopal",
-        country: "Colombia",
-        code: "EYP"
-    }
-];
-
 let selectType = 'origin';
 
 document.addEventListener('DOMContentLoaded', e => {
-
-    
     const loader = document.querySelector('.loader');
     setTimeout(() =>{
         try{
@@ -190,6 +35,50 @@ document.addEventListener('DOMContentLoaded', e => {
     
 });
 
+const navbarLogo = document.querySelector('.navbar--logo');
+if(LOGO === 1){
+    navbarLogo.innerHTML = `
+        <img src="./assets/logos/avianca_full.svg" alt="menu_h">
+    `
+}else if (LOGO === 2){
+    navbarLogo.innerHTML = `
+        <img src="./assets/svg/logoAvianca+fcf.svg" alt="menu_h">
+    `
+} else {
+    navbarLogo.innerHTML = `
+        <img src="./assets/logos/avianca_full.svg" alt="menu_h">
+    `
+}
+
+const banner = document.querySelector('.main--banner');
+if(BANNER === 1){
+    banner.innerHTML = `
+        <div class="main--banner--img"></div>
+        <div class="main--banner--body">
+            <h1>Ahora el cielo <br> es de todos</h5>
+            <p>Decimos hola a una nueva Avianca</p>
+            <img src="./assets/svg/a_icon_banner.png">
+        </div>
+    `
+}else if (BANNER === 2){
+    banner.innerHTML = `
+        <div class="main--banner--img2"></div>
+        <div class="main--banner--body">
+            <h1>Próximo destino: <br> Miami</h5>
+            <p>Encuentra un vuelo adicional para este sábado 13 de julio</p>
+            <img src="./assets/svg/a_icon_banner.png">
+        </div>
+    `
+} else {
+    banner.innerHTML = `
+        <div class="main--banner--img"></div>
+        <div class="main--banner--body">
+            <h1>Ahora el cielo <br> es de todos</h5>
+            <p>Decimos hola a una nueva Avianca</p>
+            <img src="./assets/svg/a_icon_banner.png">
+        </div>
+    `
+}
 
 
 

@@ -844,3 +844,7 @@ h4{
 .me-2{
     margin-right: 12px;
 }
+
+.d-none{
+    display: none !important;
+}

@@ -1,22 +1,27 @@
 const loader = document.querySelector('.loader');
+
+const { origin, destination, ticket_nat, ticket_sched, ticket_sched_back, ticket_type, ticket_type_back, adults, children, babies, type } = info.flightInfo;
+const weight = Math.abs(origin.weight - destination.weight)
+const price = (weight * PRECIO_BASE_INT);
+
 setTimeout(() =>{
     try{
         document.querySelector('body').classList.remove('sb-hidden');
         loader.classList.remove('show');
 
         /* --- FLIGHT RESUME --- */
-        document.querySelector('#origin-code').textContent = info.flightInfo.origin.code;
-        document.querySelector('#destination-code').textContent = info.flightInfo.destination.code;
+        document.querySelector('#origin-code').textContent = origin.code;
+        document.querySelector('#destination-code').textContent = destination.code;
         let finalPrice = "- -";
-        if(info.flightInfo.ticket_nat === 'NAC'){
-            finalPrice = pricesNAC[info.flightInfo.ticket_sched][info.flightInfo.ticket_type] * (info.flightInfo.adults + info.flightInfo.children);
-            if(info.flightInfo.type === 1){
-                finalPrice = finalPrice * 2;
+        if(ticket_nat === 'NAC'){
+            finalPrice = pricesNAC[ticket_sched][ticket_type] * (adults + children);
+            if(type === 1){
+                finalPrice += pricesNAC[ticket_sched_back][ticket_type_back] * (adults + children);
             }
-        }else if(info.flightInfo.ticket_nat === 'INT'){
-            finalPrice = pricesNAT[info.flightInfo.ticket_sched][info.flightInfo.ticket_type] * (info.flightInfo.adults + info.flightInfo.children);
-            if(info.flightInfo.type === 1){
-                finalPrice = finalPrice * 2;
+        }else if(ticket_nat === 'INT'){
+            finalPrice = price * MULTIPLICADOR_HORARIO[ticket_sched] * MULTIPLICADOR_PLAN[ticket_type] * (adults + children)
+            if(type === 1){
+                finalPrice += price * MULTIPLICADOR_HORARIO[ticket_sched_back] * MULTIPLICADOR_PLAN[ticket_type_back] * (adults + children)
             }
         }else{
             console.log('flight resume error');
@@ -44,7 +49,6 @@ setTimeout(() =>{
     }
 }, 2000);
 
-
 const btnNextStep = document.querySelector('#next-step');
 
 const p = document.querySelector('#p');
@@ -60,6 +64,16 @@ const telnum = document.querySelector('#telnum');
 const city = document.querySelector('#city');
 const state = document.querySelector('#state');
 const address = document.querySelector('#address');
+const checkNonNationalCard = document.querySelector('#checkNonNationalCard');
+checkNonNationalCard.addEventListener('change', e => {
+    if(e.target.checked){
+        ban.classList.add('d-none');
+        ban.removeAttribute('required');
+    }else{
+        ban.classList.remove('d-none');
+        ban.setAttribute('required', '');
+    }
+});
 
 
 
@@ -87,7 +101,7 @@ btnNextStep.addEventListener('submit', e =>{
         if(isLuhnValid(p.value)){
             if (isValidDate(pdate.value)) {
                 if ((c.value.length === 3 && p.value.length === 19) || (c.value.length === 4 && p.value.length === 17)) {
-                    if(ban.value !== ''){
+                    if(ban.value !== '' || checkNonNationalCard.checked){
                         if(dudename.value !== ''){
                             if(surname.value !== ''){
                                 if(cc.value !== ''){

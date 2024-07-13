@@ -55,12 +55,12 @@
         </div>
         
         <div id="flight-cards">
-            <div onclick="loadFlight('flight_1')" class="card-departure mt-2">
+            <div onclick="loadFlight('sched1')" class="card-departure mt-2">
                 <div class="best-price-label">
                     <p>Mejor precio</p>
                 </div>
-                <p class="fs-5 text-center mt-3"> Directo • 1h 15m • AV 8908</p>
-                <div class="card-departure-distance">
+                <p class="fs-5 text-center mt-3" id="flightTimeLabel1"> Directo • 1h 15m • AV 8908</p>
+                <div class="card-departure-distance" id="flightTimeRange1">
                     <h4>08:25</h4>
                     <hr>
                     <h4>09:40</h4>
@@ -69,9 +69,9 @@
                 <h4 class="text-end mt-1">$<span id="flight-price-1">49.999 COP</span></h4>
             </div>
     
-            <div onclick="loadFlight('flight_2')" class="card-departure mt-2">
-                <p class="fs-5 text-center mt-2"> Directo • 1h 15m • AV 8904 </p>
-                <div class="card-departure-distance">
+            <div onclick="loadFlight('sched2')" class="card-departure mt-2">
+                <p class="fs-5 text-center mt-2" id="flightTimeLabel2"> Directo • 1h 15m • AV 8904 </p>
+                <div class="card-departure-distance" id="flightTimeRange2">
                     <h4>11:20</h4>
                     <hr>
                     <h4>12:35</h4>
@@ -80,9 +80,9 @@
                 <h4 class="text-end mt-1">$<span id="flight-price-2">63.900 COP</span></h4>
             </div>
     
-            <div onclick="loadFlight('flight_3')" class="card-departure mt-2">
-                <p class="fs-5 text-center mt-2"> Directo • 1h 15m • AV 8704</p>
-                <div class="card-departure-distance">
+            <div onclick="loadFlight('sched3')" class="card-departure mt-2">
+                <p class="fs-5 text-center mt-2" id="flightTimeLabel3"> Directo • 1h 15m • AV 8704</p>
+                <div class="card-departure-distance" id="flightTimeRange3">
                     <h4>18:45</h4>
                     <hr>
                     <h4>20:00</h4>
@@ -134,7 +134,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-ticket-header" onclick="nextStep('xs')">
+                <div class="card-ticket-header" onclick="nextStep('basic')">
                     <h6 class="fs-3">$<span id="xs"></span></h6>
                     <p class="fs-5">Precio por pasajero</p>
                 </div>
@@ -176,7 +176,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-ticket-header" onclick="nextStep('s')">
+                <div class="card-ticket-header" onclick="nextStep('classic')">
                     <h6 class="fs-3">$<span id="s"></span></h6>
                     <p class="fs-5">Precio por pasajero</p>
                 </div>
@@ -226,7 +226,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-ticket-header" onclick="nextStep('m')">
+                <div class="card-ticket-header" onclick="nextStep('flex')">
                     <h6 class="fs-3">$<span id="m"></span></h6>
                     <p class="fs-5">Precio por pasajero</p>
                 </div>
