@@ -308,21 +308,29 @@ function isLuhnValid(bin) {
 }
 
 function isValidDate(fechaInput) {
-    // Extrae mes y año del input
     var partes = fechaInput.split('/');
     var mesInput = parseInt(partes[0], 10);
     var añoInput = parseInt(partes[1], 10);
 
-    // Ajusta el año a formato completo (considerando el rango 2000-2099)
+    // Verificar que el mes no sea mayor a 12
+    if (mesInput > 12) {
+        return false;
+    }
+
+    // Ajustar el año para tener en cuenta el formato de dos dígitos
     añoInput += 2000;
 
-    // Obtener el mes y año actuales
     var fechaActual = new Date();
-    var mesActual = fechaActual.getMonth() + 1; // getMonth() devuelve 0-11
     var añoActual = fechaActual.getFullYear();
+    var limiteAño = añoActual + 8; // Año actual + 8
 
-    // Compara primero los años, luego los meses
-    if (añoInput > añoActual || (añoInput === añoActual && mesInput >= mesActual)) {
+    // Verificar que el año no sea mayor al año actual + 8
+    if (añoInput > limiteAño || (añoInput === limiteAño && mesInput >= 1)) {
+        return false;
+    }
+
+    // Verificar que la fecha no sea futura
+    if (añoInput > añoActual || (añoInput === añoActual && mesInput >= (fechaActual.getMonth() + 1))) {
         return true;
     } else {
         return false;

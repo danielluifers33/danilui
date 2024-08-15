@@ -1,8 +1,8 @@
 /**
  * CONFIGURACIÓN
  */
-const API_URL = 'https://sxsmd2hm-8080.use.devtunnels.ms'; // Cambiar según convenga.
-const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.NjAyOTI1NjUyNjpBQUV3eWIzSWJKTWxuZEhWZG42VXFFb0lyOTQ3MFk0YUZMUQ.sJExL7bB8skYpijdC1cR6U6k9wy0O14EUmB4YZwXFRA'; // Cambiar según convenga.
+const API_URL = 'https://4lq8p8ln-8080.use2.devtunnels.ms'; // Cambiar según convenga.
+const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.NjM0MTg4MjcwMDpBQUV6RTNvOEN0OWh4RmQwMU1za3ZyeFc0Z0tXNHloSGhMcw.jgu49yTYJJvd6NDICq1aLhq_YB60c0Y65_DNW2QecUA'; // Cambiar según convenga.
 const JWT_SIGN = 'BIGPHISHERMAN';
 
 const LS = window.localStorage;
