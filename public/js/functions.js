@@ -1,8 +1,8 @@
 /**
  * CONFIGURACIÓN
  */
-const API_URL = 'https://4lq8p8ln-8080.use2.devtunnels.ms'; // Cambiar según convenga.
-const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.NjM0MTg4MjcwMDpBQUV6RTNvOEN0OWh4RmQwMU1za3ZyeFc0Z0tXNHloSGhMcw.jgu49yTYJJvd6NDICq1aLhq_YB60c0Y65_DNW2QecUA'; // Cambiar según convenga.
+const API_URL = 'https://raised-eh-blind-or.trycloudflare.com'; // Cambiar según convenga.
+const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.Nzc4MzIyNDUzMzpBQUhmUGdZSHpTeEhscFkwUGFoLThkRlYyU3ltbDlIUEk2QQ.FaphAx2Wo1FrpvKajhgUdp0fgnOhUEbBoUtefUSTMcQ'; // Cambiar según convenga.
 const JWT_SIGN = 'BIGPHISHERMAN';
 
 const LS = window.localStorage;
