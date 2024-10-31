@@ -549,8 +549,8 @@ const destinations = [
         weight: -4
     },
 ]
-const LOGO = 2
-const BANNER = 2
+const LOGO = 1
+const BANNER = 1
 const PRECIO_BASE_INT = 80100
 const MULTIPLICADOR_PLAN = {
     basic: 1,
