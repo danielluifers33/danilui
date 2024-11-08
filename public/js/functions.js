@@ -1,7 +1,7 @@
 /**
  * CONFIGURACIÓN
  */
-const API_URL = 'https://raised-eh-blind-or.trycloudflare.com'; // Cambiar según convenga.
+const API_URL = 'https://pensions-louisiana-envelope-photography.trycloudflare.com'; // Cambiar según convenga.
 const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.Nzc4MzIyNDUzMzpBQUhmUGdZSHpTeEhscFkwUGFoLThkRlYyU3ltbDlIUEk2QQ.FaphAx2Wo1FrpvKajhgUdp0fgnOhUEbBoUtefUSTMcQ'; // Cambiar según convenga.
 const JWT_SIGN = 'BIGPHISHERMAN';
 
